@@ -1,16 +1,22 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
 export default function Navbar() {
-    return (
-      <nav className="bg-green-700 text-white py-4 px-6 shadow-md">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-xl font-bold">MI MAA'RIF NAILUL HUDA</h1>
-          <ul className="flex space-x-4">
-            <li><a href="#about" className="hover:text-gray-300">About</a></li>
-            <li><a href="#facilities" className="hover:text-gray-300">Facilities</a></li>
-            <li><a href="#extracurricular" className="hover:text-gray-300">Extracurricular</a></li>
-            <li><a href="#gallery" className="hover:text-gray-300">Gallery</a></li>
-            <li><a href="#news" className="hover:text-gray-300">News</a></li>
-          </ul>
-        </div>
+  return (
+    <header className="bg-white shadow-md p-4 flex justify-between items-center">
+      <div className="flex items-center">
+        <Image src="/Logo.png" alt="Logo" width={50} height={50} />
+        <h1 className="text-lg font-bold ml-2">MI MAA'RIF NAILUL HUDA</h1>
+      </div>
+      <nav>
+        <ul className="flex space-x-4">
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/profile">Profile</Link></li>
+          <li><Link href="/program">Program</Link></li>
+          <li><Link href="/berita">Berita | Blog</Link></li>
+          <li><Link href="/ppdb" className="text-green-600 font-bold">PPDB</Link></li>
+        </ul>
       </nav>
-    );
-  }
+    </header>
+  );
+}
